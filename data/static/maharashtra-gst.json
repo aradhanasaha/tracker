@@ -1,0 +1,19 @@
+{
+  "state": "Maharashtra",
+  "note": "Seed data — approximate figures from PIB press releases. Replaced by live scrape when available.",
+  "source": "PIB press releases",
+  "series": [
+    { "month": "Jun-25", "cgst": 7940, "sgst": 9280, "igst": 8120, "cess": 310, "total": 25650 },
+    { "month": "Jul-25", "cgst": 7720, "sgst": 9050, "igst": 7890, "cess": 295, "total": 24955 },
+    { "month": "Aug-25", "cgst": 7490, "sgst": 8840, "igst": 7560, "cess": 278, "total": 24168 },
+    { "month": "Sep-25", "cgst": 8210, "sgst": 9570, "igst": 8440, "cess": 318, "total": 26538 },
+    { "month": "Oct-25", "cgst": 8780, "sgst": 10130, "igst": 9210, "cess": 342, "total": 28462 },
+    { "month": "Nov-25", "cgst": 8150, "sgst": 9430, "igst": 8340, "cess": 304, "total": 26224 },
+    { "month": "Dec-25", "cgst": 8640, "sgst": 9910, "igst": 9050, "cess": 335, "total": 27935 },
+    { "month": "Jan-26", "cgst": 9120, "sgst": 10450, "igst": 9680, "cess": 358, "total": 29608 },
+    { "month": "Feb-26", "cgst": 7860, "sgst": 9170, "igst": 8020, "cess": 290, "total": 25340 },
+    { "month": "Mar-26", "cgst": 10230, "sgst": 11640, "igst": 10890, "cess": 412, "total": 33172 },
+    { "month": "Apr-26", "cgst": 9680, "sgst": 11120, "igst": 10210, "cess": 385, "total": 31395 },
+    { "month": "May-26", "cgst": 8420, "sgst": 9780, "igst": 8760, "cess": 328, "total": 27288 }
+  ]
+}

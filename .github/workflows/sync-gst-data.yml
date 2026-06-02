@@ -1,0 +1,44 @@
+name: Sync GST Statistics Files
+
+on:
+  schedule:
+    # Runs on the 1st and 15th of every month at 03:00 UTC
+    - cron: "0 3 1,15 * *"
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run download script
+        run: node scripts/download-gst-files.mjs
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git add gstdatabase/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff --cached --stat
+          fi
+
+      - name: Commit and push updated files
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync GST statistics files $(date -u '+%Y-%m-%d')"
+          git push
